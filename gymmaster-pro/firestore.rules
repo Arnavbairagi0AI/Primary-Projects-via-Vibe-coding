@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Each Admin has completely isolated data under admins/{adminUid}
+    match /admins/{adminUid} {
+      allow read, write: if request.auth != null && request.auth.uid == adminUid;
+      
+      // All subcollections are also restricted to the authenticated Admin's UID
+      match /{document=**} {
+        allow read, write: if request.auth != null && request.auth.uid == adminUid;
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "GymMaster Pro",
+  "description": "All-in-one gym management application for owners, trainers, and receptionists featuring dynamic dashboards, member profiles, automated renewals, QR check-ins, and Gemini-powered smart plans.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
