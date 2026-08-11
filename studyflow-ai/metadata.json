@@ -1,0 +1,6 @@
+{
+  "name": "StudyFlow AI",
+  "description": "Production-ready AI Study Assistant with AI Chat Tutor, PDF Summarizer, Flashcards, Quiz Generator, Exam Planner, and Study Timer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

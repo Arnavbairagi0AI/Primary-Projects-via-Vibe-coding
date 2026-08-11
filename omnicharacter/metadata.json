@@ -1,0 +1,6 @@
+{
+  "name": "OmniCharacter AI",
+  "description": "A premium AI character chat platform inspired by the best companion apps.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "ReviewMagnet AI",
+  "description": "Automated review reply generator and lead booster SaaS that helps businesses streamline customer feedback and boost search visibility.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

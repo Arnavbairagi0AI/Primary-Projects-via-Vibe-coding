@@ -1,0 +1,6 @@
+{
+  "name": "OmniAI Universal Studio",
+  "description": "Multi-platform developer workspace featuring zero-cost AI model routing, native speech recognition, localized databases, and monorepo code generator for Tauri, React Native, and Node CLI.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

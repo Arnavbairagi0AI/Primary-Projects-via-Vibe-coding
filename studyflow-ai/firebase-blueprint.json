@@ -1,0 +1,94 @@
+{
+  "entities": {
+    "users": {
+      "uid": "string",
+      "email": "string",
+      "displayName": "string",
+      "photoURL": "string",
+      "createdAt": "string",
+      "role": "string",
+      "studyStreak": "number",
+      "lastStudyDate": "string",
+      "dailyStudyGoal": "number",
+      "currentPlan": "string",
+      "subscriptionStatus": "string",
+      "subscriptionExpiresAt": "string"
+    },
+    "notes": {
+      "id": "string",
+      "userId": "string",
+      "title": "string",
+      "content": "string",
+      "summary": "string",
+      "keyPoints": "array",
+      "formulas": "array",
+      "definitions": "array",
+      "mindMapOutline": "string",
+      "language": "string",
+      "createdAt": "string"
+    },
+    "pdfs": {
+      "id": "string",
+      "userId": "string",
+      "fileName": "string",
+      "fileSize": "string",
+      "summary": "string",
+      "keyPoints": "array",
+      "formulas": "array",
+      "definitions": "array",
+      "revisionNotes": "string",
+      "createdAt": "string"
+    },
+    "flashcards": {
+      "id": "string",
+      "userId": "string",
+      "title": "string",
+      "cards": "array",
+      "createdAt": "string"
+    },
+    "quizzes": {
+      "id": "string",
+      "userId": "string",
+      "title": "string",
+      "sourceType": "string",
+      "sourceId": "string",
+      "questions": "array",
+      "score": "number",
+      "completedAt": "string",
+      "createdAt": "string"
+    },
+    "exams": {
+      "id": "string",
+      "userId": "string",
+      "name": "string",
+      "date": "string",
+      "timetable": "array",
+      "tasks": "array",
+      "createdAt": "string"
+    },
+    "study_sessions": {
+      "id": "string",
+      "userId": "string",
+      "durationMinutes": "number",
+      "type": "string",
+      "createdAt": "string"
+    },
+    "subscriptions": {
+      "id": "string",
+      "userId": "string",
+      "plan": "string",
+      "status": "string",
+      "amount": "number",
+      "billingCycle": "string",
+      "createdAt": "string",
+      "expiresAt": "string"
+    },
+    "ai_chats": {
+      "id": "string",
+      "userId": "string",
+      "title": "string",
+      "createdAt": "string",
+      "messages": "array"
+    }
+  }
+}
