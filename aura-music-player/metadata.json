@@ -1,0 +1,6 @@
+{
+  "name": "Aura Music Player",
+  "description": "A feature-rich local music player with Material 3 design, local media scanning, custom folders, playlists, queue manager, equalizer, sleep timer, and offline sync support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
