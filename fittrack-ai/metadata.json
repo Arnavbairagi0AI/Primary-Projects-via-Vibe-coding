@@ -1,6 +1,0 @@
-{
-  "name": "FitTrack AI",
-  "description": "Personal AI Health Coach - calculate BMI, estimate calorie needs, log water, track meals, track weight, generate AI workouts and diet plans, and chat with your AI coach.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

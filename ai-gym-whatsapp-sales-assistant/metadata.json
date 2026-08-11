@@ -1,6 +1,0 @@
-{
-  "name": "AI Gym WhatsApp Sales Assistant",
-  "description": "Convert gym enquiries into free trial bookings and memberships with an automated sales chatbot, interactive CRM dashboard, and integration settings.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
