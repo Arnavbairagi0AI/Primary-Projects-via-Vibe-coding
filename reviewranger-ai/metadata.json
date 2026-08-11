@@ -1,0 +1,6 @@
+{
+  "name": "ReviewRanger AI",
+  "description": "B2B SaaS tool for Indian local business owners to manage, track, and generate instant, professional, localized SEO-friendly replies to customer reviews.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
