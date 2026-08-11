@@ -1,0 +1,6 @@
+{
+  "name": "BizChat AI",
+  "description": "A modern AI assistant for small businesses to answer customer questions, collect orders, and manage conversations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

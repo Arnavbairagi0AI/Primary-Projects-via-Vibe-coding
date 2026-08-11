@@ -1,0 +1,110 @@
+{
+  "entities": {
+    "Lead": {
+      "title": "Lead",
+      "description": "A lead generated from WhatsApp chat",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "age": { "type": "string" },
+        "gender": { "type": "string" },
+        "city": { "type": "string" },
+        "occupation": { "type": "string" },
+        "goal": { "type": "string" },
+        "experienceLevel": { "type": "string" },
+        "preferredTime": { "type": "string" },
+        "medicalConditions": { "type": "string" },
+        "membershipInterest": { "type": "string" },
+        "trialStatus": { "type": "string" },
+        "leadScore": { "type": "number" },
+        "notes": { "type": "string" },
+        "status": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["phone"]
+    },
+    "Message": {
+      "title": "Message",
+      "description": "A message sent inside a WhatsApp conversation",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sender": { "type": "string" },
+        "text": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["sender", "text", "timestamp"]
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "A booked trial workout slot",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "leadId": { "type": "string" },
+        "customerName": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "date": { "type": "string" },
+        "timeSlot": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["leadId", "date", "timeSlot", "status"]
+    },
+    "Setting": {
+      "title": "Setting",
+      "description": "App settings for integration variables",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "whatsappToken": { "type": "string" },
+        "whatsappPhoneId": { "type": "string" },
+        "openaiApiKey": { "type": "string" },
+        "googleCalendarId": { "type": "string" },
+        "googleSheetsId": { "type": "string" },
+        "ownerEmail": { "type": "string" },
+        "systemPrompt": { "type": "string" }
+      },
+      "required": ["id"]
+    },
+    "Log": {
+      "title": "Log",
+      "description": "System event and integration activity log",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "status": { "type": "string" },
+        "title": { "type": "string" },
+        "details": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["type", "title", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/leads/{leadId}": {
+      "schema": "Lead",
+      "description": "User leads collected from WhatsApp"
+    },
+    "/leads/{leadId}/messages/{messageId}": {
+      "schema": "Message",
+      "description": "Subcollection of chat messages for a lead"
+    },
+    "/bookings/{bookingId}": {
+      "schema": "Booking",
+      "description": "Free trial gym bookings"
+    },
+    "/settings/{settingsId}": {
+      "schema": "Setting",
+      "description": "SaaS integration settings and prompt configs"
+    },
+    "/logs/{logId}": {
+      "schema": "Log",
+      "description": "System event activity logs"
+    }
+  }
+}
