@@ -1,0 +1,6 @@
+{
+  "name": "TenderFlow AI",
+  "description": "An AI-powered B2B SaaS platform that helps Indian businesses discover, organize, and manage government and private tenders.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

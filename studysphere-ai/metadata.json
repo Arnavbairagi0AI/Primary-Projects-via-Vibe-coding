@@ -1,0 +1,6 @@
+{
+  "name": "StudySphere AI",
+  "description": "Personal AI tutor and study companion with smart notes, exam planner, and cognitive analytics.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

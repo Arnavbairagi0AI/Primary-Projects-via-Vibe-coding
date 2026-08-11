@@ -1,0 +1,172 @@
+{
+  "entities": {
+    "Tender": {
+      "title": "Tender",
+      "description": "Represents a public government bid tender opportunity.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "refNo": { "type": "string" },
+        "authority": { "type": "string" },
+        "department": { "type": "string" },
+        "state": { "type": "string" },
+        "city": { "type": "string" },
+        "category": { "type": "string" },
+        "value": { "type": "integer" },
+        "deadline": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "title", "refNo", "authority", "department", "state", "city", "category", "value", "deadline", "status", "createdAt"]
+    },
+    "SystemSettings": {
+      "title": "SystemSettings",
+      "description": "Global administration settings configuration.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "allowNewRegistrations": { "type": "boolean" },
+        "aiModelVersion": { "type": "string" },
+        "maintenanceMode": { "type": "boolean" },
+        "supportEmail": { "type": "string" },
+        "enableEmailAlerts": { "type": "boolean" },
+        "dailyDigestTime": { "type": "string" }
+      },
+      "required": ["id", "allowNewRegistrations", "aiModelVersion", "maintenanceMode", "supportEmail", "enableEmailAlerts", "dailyDigestTime"]
+    },
+    "FeedbackRecord": {
+      "title": "FeedbackRecord",
+      "description": "Customer support or general application feedback.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "email": { "type": "string" },
+        "subject": { "type": "string" },
+        "message": { "type": "string" },
+        "rating": { "type": "integer" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "email", "subject", "message", "rating", "status", "createdAt"]
+    },
+    "ActivityLog": {
+      "title": "ActivityLog",
+      "description": "User activity auditing and tracing log.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "userName": { "type": "string" },
+        "action": { "type": "string" },
+        "detail": { "type": "string" },
+        "category": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["id", "userId", "userEmail", "userName", "action", "detail", "category", "timestamp"]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User identity profile details.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "role": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "emailVerified": { "type": "boolean" },
+        "status": { "type": "string" }
+      },
+      "required": ["uid", "email", "displayName", "role", "createdAt", "emailVerified", "status"]
+    },
+    "Company": {
+      "title": "Company",
+      "description": "Enterprise firm corporate info.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "gstNumber": { "type": "string" },
+        "industry": { "type": "string" },
+        "keywords": { "type": "array" },
+        "states": { "type": "array" },
+        "categories": { "type": "array" },
+        "previousProjects": { "type": "array" },
+        "contactInfo": { "type": "object" },
+        "subscriptionPlan": { "type": "string" },
+        "subscriptionStatus": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "name", "gstNumber", "industry", "subscriptionPlan", "subscriptionStatus", "createdAt"]
+    },
+    "SavedTender": {
+      "title": "SavedTender",
+      "description": "A saved bid opportunity representing workflow pipeline status.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "tenderId": { "type": "string" },
+        "userId": { "type": "string" },
+        "companyId": { "type": "string" },
+        "isFavorite": { "type": "boolean" },
+        "notes": { "type": "string" },
+        "assignedTeam": { "type": "array" },
+        "status": { "type": "string" },
+        "savedAt": { "type": "string" }
+      },
+      "required": ["id", "tenderId", "userId", "companyId", "isFavorite", "notes", "assignedTeam", "status", "savedAt"]
+    },
+    "AppNotification": {
+      "title": "AppNotification",
+      "description": "Bidding task alert/system notifications.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "message": { "type": "string" },
+        "type": { "type": "string" },
+        "read": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "title", "message", "type", "read", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/tenders/{tenderId}": {
+      "schema": "Tender",
+      "description": "Collection of all public tenders."
+    },
+    "/settings/{settingId}": {
+      "schema": "SystemSettings",
+      "description": "Collection of system settings."
+    },
+    "/feedback/{feedbackId}": {
+      "schema": "FeedbackRecord",
+      "description": "Collection of user feedback entries."
+    },
+    "/activityLogs/{logId}": {
+      "schema": "ActivityLog",
+      "description": "Audit trail logs."
+    },
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Collection of user profiles."
+    },
+    "/companies/{companyId}": {
+      "schema": "Company",
+      "description": "Collection of companies profiles."
+    },
+    "/savedTenders/{savedId}": {
+      "schema": "SavedTender",
+      "description": "Company-specific board saved tenders."
+    },
+    "/notifications/{notificationId}": {
+      "schema": "AppNotification",
+      "description": "Collection of alert notifications."
+    }
+  }
+}
