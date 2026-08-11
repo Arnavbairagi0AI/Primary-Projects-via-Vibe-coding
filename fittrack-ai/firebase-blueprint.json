@@ -1,0 +1,232 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Onboarding information and health profile of the user",
+      "type": "object",
+      "properties": {
+        "fullName": { "type": "string" },
+        "age": { "type": "integer" },
+        "gender": { "type": "string", "enum": ["Male", "Female", "Other"] },
+        "height": { "type": "number", "description": "Height in cm" },
+        "weight": { "type": "number", "description": "Weight in kg" },
+        "phoneNumber": { "type": "string" },
+        "email": { "type": "string" },
+        "fitnessGoal": { "type": "string" },
+        "activityLevel": { "type": "string" },
+        "foodPreference": { "type": "string" },
+        "medicalConditions": { "type": "string" },
+        "dailySleep": { "type": "number", "description": "Daily sleep in hours" },
+        "dailyWaterGoal": { "type": "number", "description": "Daily water intake goal in ml" },
+        "targetWeight": { "type": "number", "description": "Target weight in kg" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["fullName", "age", "gender", "height", "weight", "phoneNumber", "fitnessGoal", "activityLevel"]
+    },
+    "BmiEntry": {
+      "title": "BmiEntry",
+      "description": "A single BMI calculation entry",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "bmi": { "type": "number" },
+        "height": { "type": "number" },
+        "weight": { "type": "number" },
+        "category": { "type": "string" },
+        "recommendation": { "type": "string" },
+        "timestamp": { "type": "integer" }
+      },
+      "required": ["id", "date", "time", "bmi", "height", "weight", "category"]
+    },
+    "CalorieCalculation": {
+      "title": "CalorieCalculation",
+      "description": "Saved result of a calorie need calculation",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "maintenance": { "type": "integer" },
+        "weightLoss": { "type": "integer" },
+        "weightGain": { "type": "integer" },
+        "age": { "type": "integer" },
+        "gender": { "type": "string" },
+        "weight": { "type": "number" },
+        "height": { "type": "number" },
+        "activityLevel": { "type": "string" },
+        "goal": { "type": "string" },
+        "timestamp": { "type": "integer" }
+      },
+      "required": ["id", "date", "time", "maintenance", "weightLoss", "weightGain"]
+    },
+    "MealEntry": {
+      "title": "MealEntry",
+      "description": "Logged food or meal entry",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "name": { "type": "string" },
+        "calories": { "type": "number" },
+        "protein": { "type": "number" },
+        "carbs": { "type": "number" },
+        "fat": { "type": "number" },
+        "fiber": { "type": "number" },
+        "sugar": { "type": "number" },
+        "timestamp": { "type": "integer" }
+      },
+      "required": ["id", "date", "time", "name", "calories"]
+    },
+    "WaterEntry": {
+      "title": "WaterEntry",
+      "description": "Logged water intake",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "amount": { "type": "integer", "description": "Water in ml" },
+        "timestamp": { "type": "integer" }
+      },
+      "required": ["id", "date", "time", "amount"]
+    },
+    "WeightEntry": {
+      "title": "WeightEntry",
+      "description": "Logged weight entry",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "weight": { "type": "number" },
+        "goalWeight": { "type": "number" },
+        "bmi": { "type": "number" },
+        "timestamp": { "type": "integer" }
+      },
+      "required": ["id", "date", "time", "weight"]
+    },
+    "DietPlan": {
+      "title": "DietPlan",
+      "description": "AI generated diet plan details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "goal": { "type": "string" },
+        "preference": { "type": "string" },
+        "calories": { "type": "integer" },
+        "protein": { "type": "integer" },
+        "carbs": { "type": "integer" },
+        "fat": { "type": "integer" },
+        "meals": {
+          "type": "object",
+          "properties": {
+            "breakfast": { "type": "string" },
+            "lunch": { "type": "string" },
+            "dinner": { "type": "string" },
+            "snacks": { "type": "string" }
+          }
+        },
+        "shoppingList": { "type": "string" },
+        "budgetFriendly": { "type": "boolean" },
+        "optionsText": { "type": "string" },
+        "timestamp": { "type": "integer" }
+      },
+      "required": ["id", "date", "meals"]
+    },
+    "WorkoutPlan": {
+      "title": "WorkoutPlan",
+      "description": "AI generated workout plan",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "goal": { "type": "string" },
+        "level": { "type": "string" },
+        "workoutType": { "type": "string" },
+        "exercises": { "type": "string" },
+        "warmup": { "type": "string" },
+        "cooldown": { "type": "string" },
+        "stretching": { "type": "string" },
+        "duration": { "type": "string" },
+        "timestamp": { "type": "integer" }
+      },
+      "required": ["id", "date", "exercises"]
+    },
+    "ChatHistoryEntry": {
+      "title": "ChatHistoryEntry",
+      "description": "A single exchange in the AI Chat Coach",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "role": { "type": "string", "enum": ["user", "model"] },
+        "content": { "type": "string" },
+        "timestamp": { "type": "integer" }
+      },
+      "required": ["id", "role", "content", "timestamp"]
+    },
+    "VisitorLead": {
+      "title": "VisitorLead",
+      "description": "Details of newly landed visitors collected immediately",
+      "type": "object",
+      "properties": {
+        "fullName": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "email": { "type": "string" },
+        "fitnessGoal": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "deviceType": { "type": "string" },
+        "timestamp": { "type": "integer" }
+      },
+      "required": ["fullName", "phoneNumber", "date", "time"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "The custom profile for each signed-in user"
+    },
+    "/users/{userId}/bmiHistory/{entryId}": {
+      "schema": "BmiEntry",
+      "description": "History of BMI calculations for a user"
+    },
+    "/users/{userId}/calorieHistory/{entryId}": {
+      "schema": "CalorieCalculation",
+      "description": "History of daily calorie need calculations"
+    },
+    "/users/{userId}/mealHistory/{entryId}": {
+      "schema": "MealEntry",
+      "description": "Food consumption logs"
+    },
+    "/users/{userId}/waterHistory/{entryId}": {
+      "schema": "WaterEntry",
+      "description": "Water consumption logs"
+    },
+    "/users/{userId}/weightHistory/{entryId}": {
+      "schema": "WeightEntry",
+      "description": "Weight tracking logs"
+    },
+    "/users/{userId}/dietPlans/{planId}": {
+      "schema": "DietPlan",
+      "description": "AI generated diet plans"
+    },
+    "/users/{userId}/workoutPlans/{planId}": {
+      "schema": "WorkoutPlan",
+      "description": "AI generated workout plans"
+    },
+    "/users/{userId}/chatHistory/{chatId}": {
+      "schema": "ChatHistoryEntry",
+      "description": "Conversation log with AI Health Coach"
+    },
+    "/visitorLeads/{leadId}": {
+      "schema": "VisitorLead",
+      "description": "Leads gathered from first-time visitors"
+    }
+  }
+}
