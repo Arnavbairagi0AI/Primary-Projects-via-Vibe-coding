@@ -1,0 +1,37 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Users Collection rules
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Missed calls collection rules
+    match /missed_calls/{callId} {
+      allow read, write: if request.auth != null && (
+        resource == null || 
+        resource.data.ownerId == request.auth.uid || 
+        request.resource.data.ownerId == request.auth.uid
+      );
+    }
+    
+    // Payments collection rules
+    match /payments/{paymentId} {
+      allow read, write: if request.auth != null && (
+        resource == null || 
+        resource.data.userId == request.auth.uid || 
+        request.resource.data.userId == request.auth.uid
+      );
+    }
+
+    // Bookings Collection rules (anyone can create public booking; only owner can view/update)
+    match /bookings/{bookingId} {
+      allow create: if true;
+      allow read, update, delete: if request.auth != null && (
+        resource == null || 
+        resource.data.businessId == request.auth.uid || 
+        request.resource.data.businessId == request.auth.uid
+      );
+    }
+  }
+}

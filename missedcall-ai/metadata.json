@@ -1,0 +1,6 @@
+{
+  "name": "MissedCall AI",
+  "description": "Smart full-stack missed call recovery system and scheduling portal that automatically engages lost clients.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

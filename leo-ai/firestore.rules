@@ -1,0 +1,34 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper: Is the user a Super Admin?
+    function isSuperAdmin() {
+      return request.auth != null && request.auth.token.email == 'neoedits2008@gmail.com';
+    }
+
+    // Helper: Does the user own this business?
+    function ownsBusiness(businessId) {
+      return request.auth != null && (request.auth.uid == businessId || isSuperAdmin());
+    }
+
+    // Businesses collection
+    match /businesses/{businessId} {
+      allow read, write: if ownsBusiness(businessId);
+
+      // Sub-collections under each business
+      match /{allSubcollections=**} {
+        allow read, write: if ownsBusiness(businessId);
+      }
+    }
+
+    // Global Admin/Platform statistics (for the admin panel)
+    match /platform_stats/{docId} {
+      allow read, write: if isSuperAdmin();
+    }
+    
+    // Fallback: Super Admin has full power, other paths default deny
+    match /{document=**} {
+      allow read, write: if isSuperAdmin();
+    }
+  }
+}
