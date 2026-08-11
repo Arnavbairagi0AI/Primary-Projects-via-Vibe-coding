@@ -1,0 +1,6 @@
+{
+  "name": "BeatStream",
+  "description": "A premium dark-themed music streaming and companion application featuring Spotify integration, offline downloads, smart recommendations, custom playlist sync, and a collaborative social feed.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
