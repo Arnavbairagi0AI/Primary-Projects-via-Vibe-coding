@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .btn-glow {
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+    transition: all 0.3s ease;
+  }
+  .atmosphere {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 40%, rgba(56, 189, 248, 0.15) 0, transparent 70%);
+    pointer-events: none;
+  }
+}

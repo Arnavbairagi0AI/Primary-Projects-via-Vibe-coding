@@ -1,0 +1,6 @@
+{
+  "name": "MountainVerse",
+  "description": "An ultra-premium 3D interactive educational platform dedicated to the world's greatest mountains from every continent with interactive 3D terrain models, 3D world globe, expeditions, and climate science.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

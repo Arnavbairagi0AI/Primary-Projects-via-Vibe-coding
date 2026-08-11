@@ -1,0 +1,6 @@
+{
+  "name": "IronPulse",
+  "description": "A premium fitness assessment and lead generation tool for gym owners. Features custom biometric calculations, local Room lead capture DB, Gemini AI coach summary generation, and copyable web deployment code.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
